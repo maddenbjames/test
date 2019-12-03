@@ -12,6 +12,11 @@ public class Guest{
         this.address = address;
         this.phoneNumber = phoneNumber;
     }
+
+    public void addGuest(){
+
+    }
+
     @Override
     public String toString(){
         return ("Enter in the data provided by Guest class");

@@ -3,9 +3,9 @@ package sample;
 public class Customer {
 
     private String accountUsername, password, address, nameofUser;
-    private int phoneNumber;
+    private int phoneNumber, txtFileLineNumber;
 
-    //public Card userCard
+    public Card userCard;
     //public Order customOrder;
     public Customer(String Username, String Psswrd, String addrss, String Name, int phone) {
         accountUsername = Username;
@@ -45,6 +45,16 @@ public class Customer {
         return false;
     }
 
+
+    public void addAccount() {
+
+    }
+
+    public void editAccount(){
+
+    }
+
+
     /**
      * public void assignCard(String typeOfCard, String cardHolderName, Long cardNumberInput, int expirationDate, int Zip, int code){
      * userCard.setUserCard();
@@ -66,4 +76,12 @@ public class Customer {
         return out;
     }
 
+
+    /*
+    Each customer created will be a new txt file on the desktop screen with the text file named after their username
+    That way when they try to login, the code can search for the username txt file and then check if the password saved in the file matches
+    A guest txt file will be temporary so deletion after their done will be easy
+
+
+     */
 }
