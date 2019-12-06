@@ -5,6 +5,7 @@ import sample.Order;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import sample.Customer;
 
 import java.util.ArrayList;
 
@@ -20,7 +21,7 @@ public class Main extends Application{
 
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) {
         window = primaryStage;
         window.setTitle("Mom And Pop Pizza");//Name of the window
 
@@ -37,4 +38,7 @@ public class Main extends Application{
     static Order getOrder() {
         return order;
     }
+
+    static Customer user = new Customer();
+
 }
