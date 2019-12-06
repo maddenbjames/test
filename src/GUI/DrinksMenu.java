@@ -11,6 +11,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.scene.text.Font;
+import sample.Drinks;
 import sample.Order;
 
 public class DrinksMenu {
@@ -413,10 +414,44 @@ public class DrinksMenu {
         Cart_btn.setOnAction(e -> window.getScene().setRoot(cart.BuildCart(window)));
         Pepsi_btn.setOnAction((event) -> {
             if(Large_radio.isSelected() == true) {
-
+                Drinks large_pepsi = new Drinks("Pepsi", "Large");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(large_pepsi);
+                }
+            }
+            if(Medium_radio.isSelected() == true) {
+                Drinks medium_pepsi = new Drinks("Pepsi", "Medium");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(medium_pepsi);
+                }
+            }
+            if(Small_radio.isSelected() == true) {
+                Drinks small_pepsi = new Drinks("Pepsi", "Small");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(small_pepsi);
+                }
             }
         });
-        //DietPepsi_btn
+        DietPepsi_btn.setOnAction((event) -> {
+            if(Large1_radio.isSelected() == true) {
+                Drinks large_dietpepsi = new Drinks("Diet-Pepsi", "Large");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(large_dietpepsi);
+                }
+            }
+            if(Medium1_radio.isSelected() == true) {
+                Drinks medium_dietpepsi = new Drinks("Diet-Pepsi", "Medium");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(medium_dietpepsi);
+                }
+            }
+            if(Small1_radio.isSelected() == true) {
+                Drinks small_dietpepsi = new Drinks("Diet-Pepsi", "Small");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(small_dietpepsi);
+                }
+            }
+        });
         //SierraMist_btn
         //DietSierraMist_btn
         //RootBeer_btn
