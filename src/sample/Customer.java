@@ -1,11 +1,17 @@
 package sample;
+import java.io.FileReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.stream.Stream;
+
 
 public class Customer {
 
     private String accountUsername, password, address, nameofUser;
     private int phoneNumber, txtFileLineNumber;
 
-    public Card userCard;
+    //public Card userCard;
     //public Order customOrder;
     public Customer(String Username, String Psswrd, String addrss, String Name, int phone) {
         accountUsername = Username;

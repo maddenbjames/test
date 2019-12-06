@@ -60,10 +60,9 @@ class LoginMenu {
         return  vb2;
     }
 
-    private void Login_ButtonActions(Stage window){
+    private void Login_ButtonActions(Stage window) {
         //Scenes are initiated
         MainMenu mm  = new MainMenu();
-
         //sets events for buttons and passwords
         Guest_btn.setOnAction(e -> window.getScene().setRoot(mm.BuildMainMenu(window)));
     }
