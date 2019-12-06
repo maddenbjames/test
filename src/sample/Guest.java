@@ -1,4 +1,9 @@
 package sample;
+import java.io.FileReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.stream.Stream;
 
 public class Guest{
 
@@ -11,10 +16,6 @@ public class Guest{
         this.nameofUser = nameofUser;
         this.address = address;
         this.phoneNumber = phoneNumber;
-    }
-
-    public void addGuest(){
-
     }
 
     @Override

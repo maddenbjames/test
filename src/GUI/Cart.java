@@ -1,9 +1,12 @@
 package GUI;
 
+import com.sun.javafx.tk.FontMetrics;
+import com.sun.javafx.tk.Toolkit;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
@@ -38,8 +41,11 @@ public class Cart {
         HBox hb1 = new HBox(50);
         HBox hb2 = new HBox(50);
         HBox hb3 = new HBox(50);
+
         HBox hb4 = new HBox(50);
+
         HBox hb5 = new HBox(50);
+
         HBox hb6 = new HBox(50);
         HBox hb7 = new HBox(50);
         HBox hb8 = new HBox(50);
