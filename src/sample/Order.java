@@ -4,10 +4,10 @@ import java.util.*;
 
 public class Order {
 
-    ArrayList<Object> pizzas = new ArrayList<>();
-    ArrayList<Object> sides = new ArrayList<>();
-    ArrayList<Object> drinks = new ArrayList<>();
-    ArrayList<Object> cookies = new ArrayList<>();
+    ArrayList<Pizza> pizzas = new ArrayList<>();
+    ArrayList<Sides> sides = new ArrayList<>();
+    ArrayList<Drinks> drinks = new ArrayList<>();
+    ArrayList<Cookie> cookies = new ArrayList<>();
 
     public void addPizza(Pizza pizza) {
         this.pizzas.add(pizza);
@@ -25,19 +25,19 @@ public class Order {
         this.cookies.add(cookie);
     }
 
-    public ArrayList<Object> getPizzas() {
+    public ArrayList<Pizza> getPizzas() {
         return this.pizzas;
     }
 
-    public ArrayList<Object> getSides() {
+    public ArrayList<Sides> getSides() {
         return this.sides;
     }
 
-    public ArrayList<Object> getDrinks() {
+    public ArrayList<Drinks> getDrinks() {
         return this.drinks;
     }
 
-    public ArrayList<Object> getCookies() {
+    public ArrayList<Cookie> getCookies() {
         return this.cookies;
     }
 
