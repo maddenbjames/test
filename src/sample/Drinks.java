@@ -27,13 +27,7 @@ public class Drinks {
     }
 
     public int getPrice() {
-        if(this.size.equalsIgnoreCase("small")) {
-            return 2;
-        } else if(this.size.equalsIgnoreCase("medium")) {
-            return 4;
-        } else {
-            return 6;
-        }
+        return 1;
     }
 
     @Override
