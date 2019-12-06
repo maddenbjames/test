@@ -452,14 +452,166 @@ public class DrinksMenu {
                 }
             }
         });
-        //SierraMist_btn
-        //DietSierraMist_btn
-        //RootBeer_btn
-        //DietRootBeer_btn
-        //Orange_btn
-        //DietOrange_btn
-        //Lemonade_btn
-        //Water_btn
+        SierraMist_btn.setOnAction((event) -> {
+            if(Large2_radio.isSelected() == true) {
+                Drinks large_sierra = new Drinks("SierraMist", "Large");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(large_sierra);
+                }
+            }
+            if(Medium2_radio.isSelected() == true) {
+                Drinks medium_sierra = new Drinks("SierraMist", "Medium");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(medium_sierra);
+                }
+            }
+            if(Small2_radio.isSelected() == true) {
+                Drinks small_sierra = new Drinks("SierraMist", "Small");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(small_sierra);
+                }
+            }
+        });
+        DietSierraMist_btn.setOnAction((event) -> {
+            if(Large3_radio.isSelected() == true) {
+                Drinks large_dietsierra = new Drinks("Diet-SierraMist", "Large");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(large_dietsierra);
+                }
+            }
+            if(Medium3_radio.isSelected() == true) {
+                Drinks medium_dietsierra = new Drinks("Diet-SierraMist", "Medium");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(medium_dietsierra);
+                }
+            }
+            if(Small3_radio.isSelected() == true) {
+                Drinks small_dietsierra = new Drinks("Diet-SierraMist", "Small");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(small_dietsierra);
+                }
+            }
+        });
+        RootBeer_btn.setOnAction((event) -> {
+            if(Large4_radio.isSelected() == true) {
+                Drinks large_rootbeer = new Drinks("RootBeer", "Large");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(large_rootbeer);
+                }
+            }
+            if(Medium4_radio.isSelected() == true) {
+                Drinks medium_rootbeer = new Drinks("RootBeer", "Medium");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(medium_rootbeer);
+                }
+            }
+            if(Small4_radio.isSelected() == true) {
+                Drinks small_rootbeer = new Drinks("RootBeer", "Small");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(small_rootbeer);
+                }
+            }
+        });
+        DietRootBeer_btn.setOnAction((event) -> {
+            if(Large5_radio.isSelected() == true) {
+                Drinks large_dietrootbeer = new Drinks("Diet-RootBeer", "Large");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(large_dietrootbeer);
+                }
+            }
+            if(Medium5_radio.isSelected() == true) {
+                Drinks medium_dietrootbeer = new Drinks("Diet-RootBeer", "Medium");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(medium_dietrootbeer);
+                }
+            }
+            if(Small5_radio.isSelected() == true) {
+                Drinks small_dietrootbeer = new Drinks("Diet-RootBeer", "Small");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(small_dietrootbeer);
+                }
+            }
+        });
+        Orange_btn.setOnAction((event) -> {
+            if(Large6_radio.isSelected() == true) {
+                Drinks large_orange = new Drinks("Orange", "Large");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(large_orange);
+                }
+            }
+            if(Medium6_radio.isSelected() == true) {
+                Drinks medium_orange = new Drinks("Orange", "Medium");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(medium_orange);
+                }
+            }
+            if(Small6_radio.isSelected() == true) {
+                Drinks small_orange = new Drinks("Orange", "Small");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(small_orange);
+                }
+            }
+        });
+        DietOrange_btn.setOnAction((event) -> {
+            if(Large7_radio.isSelected() == true) {
+                Drinks large_dietorange = new Drinks("Diet-Orange", "Large");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(large_dietorange);
+                }
+            }
+            if(Medium7_radio.isSelected() == true) {
+                Drinks medium_dietorange = new Drinks("Diet-Orange", "Medium");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(medium_dietorange);
+                }
+            }
+            if(Small7_radio.isSelected() == true) {
+                Drinks small_dietorange = new Drinks("Diet-Orange", "Small");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(small_dietorange);
+                }
+            }
+        });
+        Lemonade_btn.setOnAction((event) -> {
+            if(Large8_radio.isSelected() == true) {
+                Drinks large_lemonade = new Drinks("Lemonade", "Large");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(large_lemonade);
+                }
+            }
+            if(Medium8_radio.isSelected() == true) {
+                Drinks medium_lemonade = new Drinks("Lemonade", "Medium");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(medium_lemonade);
+                }
+            }
+            if(Small8_radio.isSelected() == true) {
+                Drinks small_lemonade = new Drinks("Lemonade", "Small");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(small_lemonade);
+                }
+            }
+        });
+        Water_btn.setOnAction((event) -> {
+            if(Large9_radio.isSelected() == true) {
+                Drinks large_water = new Drinks("Water", "Large");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(large_water);
+                }
+            }
+            if(Medium9_radio.isSelected() == true) {
+                Drinks medium_water = new Drinks("Water", "Medium");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(medium_water);
+                }
+            }
+            if(Small9_radio.isSelected() == true) {
+                Drinks small_water = new Drinks("Water", "Small");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(small_water);
+                }
+            }
+        });
     }
 
     //This method handles the fonts in the drinks menu
