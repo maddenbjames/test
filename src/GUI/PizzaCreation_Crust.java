@@ -218,33 +218,35 @@ public class PizzaCreation_Crust {
         Veggies_btn.setOnAction(e -> window.getScene().setRoot(pizzaCreation_veggies.BuildVeggies(window)));
         Next_btn.setOnAction(e -> window.getScene().setRoot(pizzaCreation_cheese.BuildCheese(window)));
 
-        Pizza pizza = new Pizza();
-        for(Object obj: order.getArrayList())
-            if (obj instanceof Pizza)
-                pizza = (Pizza)obj;
-
         //Changing Size
         Small_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
             pizza.chooseSize("small");
         });
         Medium_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
             pizza.chooseSize("medium");
         });
         Large_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
             pizza.chooseSize("large");
         });
         ExtraLarge_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
             pizza.chooseSize("extraLarge");
         });
 
         //Crust type
         Regular_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
             pizza.chooseType("regular");
         });
         Pan_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
             pizza.chooseType("pan");
         });
         DeepDish_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
             pizza.chooseType("deepDish");
         });
 
@@ -271,5 +273,14 @@ public class PizzaCreation_Crust {
         Meats_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
         Veggies_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
         Next_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
+    }
+
+    private Pizza findpizza()
+    {
+        Pizza p = new Pizza();
+        for(Pizza obj: order.getPizzas())
+            p=obj;
+
+        return p;
     }
 }
