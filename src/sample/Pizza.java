@@ -1,3 +1,5 @@
+package sample;
+
 public class Pizza
 {
     private double price;

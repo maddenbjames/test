@@ -1,3 +1,5 @@
+package sample;
+
 public class BreadBites
 {
     private boolean garlic;

@@ -1,23 +1,17 @@
 package sample;
 
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 
-public class Main extends Application {
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.LinkedList;
 
-    @Override
-    public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
-        primaryStage.show();
+public class Main {
+
+    public static void main(String args[]) {
+        Drinks drink = new Drinks("pepsi" , "medium");
+        Order test = new Order();
+        test.addDrink(drink);
+        test.printOrder();
     }
 
-
-    public static void main(String[] args) {
-        launch(args);
-    }
 }
