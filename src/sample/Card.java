@@ -45,8 +45,8 @@ public class Card {
         cardtype = updateUserCard;
     }
 
-    public void setNameOfCardHolder(long updateUserName) {
-        cardNumber = updateUserName;
+    public void setNameOfCardHolder(String updateUserName) {
+        nameOfCardHolder = updateUserName;
     }
 
     public void setExpDate(int expDate) {
@@ -68,7 +68,7 @@ public class Card {
     @Override
     public String toString() {
 
-        return ("This is where you would format the card info");
+        return ("\nCard: " + cardtype + "\nName: " + nameOfCardHolder + "\nExpiration Date: " + expDate + "\nCard #: " + cardNumber + "\nSecure Code: " + secureCode + "\nZipCode: " + zipCode);
     }
 
 }
