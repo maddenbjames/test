@@ -47,8 +47,8 @@ public class PizzaCreation_Crust {
     private RadioButton DeepDish_radio = new RadioButton();
 
     //Constants in every scene
-    private Image Template= new Image("GUI/PizzaProject Info Template_Back.png");
-    private Image Crust_pic = new Image("GUI/Crust1.jpg");
+    private Image Template= new Image("GUI/images/PizzaProject Info Template_Back.png");
+    private Image Crust_pic = new Image("GUI/images/Crust1.jpg");
 
     //This method is where the look and feel of the crust menu derives
     public VBox BuildCrust(Stage window){

@@ -28,7 +28,7 @@ public class PickupOptions {
     private Label Total_Lbl = new Label("Total:");
 
     //Images used in the cart menu
-    private Image Template= new Image("GUI/PizzaProject Info Template_Back.png");
+    private Image Template= new Image("GUI/images/PizzaProject Info Template_Back.png");
 
     public VBox BuildPickup(Stage window){
         //VBoxes used in this method

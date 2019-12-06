@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 import javafx.scene.text.Font;
 
 class MainMenu {
+
     //Buttons used for the main menu
     private Button Pizza_btn = new Button("Build A Pizza");
     private Button Drinks_btn = new Button("Drinks");
@@ -24,7 +25,7 @@ class MainMenu {
     private Label main_menu_lbl = new Label("Main Menu");
 
     //Constants in every scene
-    private Image Template = new Image("GUI/PizzaProject Info Template_Back.png");
+    private Image Template = new Image("GUI/images/PizzaProject Info Template_Back.png");
 
    public VBox BuildMainMenu(Stage window){
         //VBoxes and HBoxes are initiated.
@@ -65,6 +66,7 @@ class MainMenu {
 
     private void MainMenu_ButtonActions(Stage window){
 
+
         //Sets the size of the back button to match the template
         Back_btn.setPrefSize(75,75);
 
@@ -81,6 +83,7 @@ class MainMenu {
         Drinks_btn.setOnAction(e -> window.getScene().setRoot(drinksMenu.BuildDrinks(window)));
         Sides_btn.setOnAction(e -> window.getScene().setRoot(sidesMenu.BuildSides(window)));
         Profile_btn.setOnAction(e -> window.getScene().setRoot(profileMenu.BuildProfile(window)));
+
     }
     private void FontsUsed(){
         //Changes the fonts of the labels and buttons

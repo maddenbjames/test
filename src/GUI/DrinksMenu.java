@@ -11,8 +11,11 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.scene.text.Font;
+import sample.Drinks;
+import sample.Order;
 
 public class DrinksMenu {
+    Order order = Main.getOrder();
 
     //Buttons used in the drinks menu
     private Button MainMenu_btn = new Button("Main Menu");
@@ -140,17 +143,17 @@ public class DrinksMenu {
     private Label Small9_Lbl = new Label("Small");
 
     //Images used in the Drinks menu
-    private Image Template = new Image("GUI/PizzaProject Info Template_Back.png");
-    private Image Pepsi_pic = new Image("GUI/Pepsi1.jpg");
-    private Image DietPepsi_pic = new Image("GUI/DietPepsi.jpg");
-    private Image SierraMist_pic = new Image("GUI/SierraMist1.jpg");
-    private Image DietSierraMist_pic = new Image("GUI/DietSierraMist1.jpg");
-    private Image RootBeer_pic = new Image("GUI/RootBeer1.jpg");
-    private Image DietRootBeer_pic = new Image("GUI/DietRootBeer.jpg");
-    private Image Orange_pic = new Image("GUI/Orange1.jpg");
-    private Image DietOrange_pic = new Image("GUI/DietOrange.jpg");
-    private Image Lemonade_pic = new Image("GUI/Lemonade1.jpg");
-    private Image Water_pic = new Image("GUI/Water1.jpg");
+    private Image Template = new Image("GUI/images/PizzaProject Info Template_Back.png");
+    private Image Pepsi_pic = new Image("GUI/images/Pepsi1.jpg");
+    private Image DietPepsi_pic = new Image("GUI/images/DietPepsi.jpg");
+    private Image SierraMist_pic = new Image("GUI/images/SierraMist1.jpg");
+    private Image DietSierraMist_pic = new Image("GUI/images/DietSierraMist1.jpg");
+    private Image RootBeer_pic = new Image("GUI/images/RootBeer1.jpg");
+    private Image DietRootBeer_pic = new Image("GUI/images/DietRootBeer.jpg");
+    private Image Orange_pic = new Image("GUI/images/Orange1.jpg");
+    private Image DietOrange_pic = new Image("GUI/images/DietOrange.jpg");
+    private Image Lemonade_pic = new Image("GUI/images/Lemonade1.jpg");
+    private Image Water_pic = new Image("GUI/images/Water1.jpg");
 
     public VBox BuildDrinks(Stage window){
         //VBoxes used in this method
@@ -409,6 +412,54 @@ public class DrinksMenu {
         Back_btn.setOnAction(e -> window.getScene().setRoot(mm.BuildMainMenu(window)));
         MainMenu_btn.setOnAction(e -> window.getScene().setRoot(sides.BuildSides(window)));
         Cart_btn.setOnAction(e -> window.getScene().setRoot(cart.BuildCart(window)));
+        Pepsi_btn.setOnAction((event) -> {
+            if(Large_radio.isSelected() == true) {
+                Drinks large_pepsi = new Drinks("Pepsi", "Large");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(large_pepsi);
+                }
+            }
+            if(Medium_radio.isSelected() == true) {
+                Drinks medium_pepsi = new Drinks("Pepsi", "Medium");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(medium_pepsi);
+                }
+            }
+            if(Small_radio.isSelected() == true) {
+                Drinks small_pepsi = new Drinks("Pepsi", "Small");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(small_pepsi);
+                }
+            }
+        });
+        DietPepsi_btn.setOnAction((event) -> {
+            if(Large1_radio.isSelected() == true) {
+                Drinks large_dietpepsi = new Drinks("Diet-Pepsi", "Large");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(large_dietpepsi);
+                }
+            }
+            if(Medium1_radio.isSelected() == true) {
+                Drinks medium_dietpepsi = new Drinks("Diet-Pepsi", "Medium");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(medium_dietpepsi);
+                }
+            }
+            if(Small1_radio.isSelected() == true) {
+                Drinks small_dietpepsi = new Drinks("Diet-Pepsi", "Small");
+                for(int i = 0; i < (Integer.parseInt(Large_field.getText())); i++) {
+                    order.addDrink(small_dietpepsi);
+                }
+            }
+        });
+        //SierraMist_btn
+        //DietSierraMist_btn
+        //RootBeer_btn
+        //DietRootBeer_btn
+        //Orange_btn
+        //DietOrange_btn
+        //Lemonade_btn
+        //Water_btn
     }
 
     //This method handles the fonts in the drinks menu

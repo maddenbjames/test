@@ -52,14 +52,14 @@ public class PizzaCreation_Meats {
     private Label CanadianBacon_Lbl = new Label("Canadian Bacon");
 
     //Constants in every scene
-    private Image Template = new Image("GUI/PizzaProject Info Template_Back.png");
-    private Image Pep_pic = new Image("GUI/pepperoni1.jpg");
-    private Image Sau_pic = new Image("GUI/sausage1.jpg");
-    private Image ham_pic = new Image("GUI/ham1.jpg");
-    private Image CBacon_pic = new Image("GUI/canadian bacon1.jpg");
-    private Image WholePizza_pic = new Image("GUI/Whole.jpg");
-    private Image LeftHalf_pic = new Image("GUI/LeftHalf.jpg");
-    private Image RightHalf_pic = new Image("GUI/RightHalf.jpg");
+    private Image Template = new Image("GUI/images/PizzaProject Info Template_Back.png");
+    private Image Pep_pic = new Image("GUI/images/pepperoni1.jpg");
+    private Image Sau_pic = new Image("GUI/images/sausage1.jpg");
+    private Image ham_pic = new Image("GUI/images/ham1.jpg");
+    private Image CBacon_pic = new Image("GUI/images/canadian bacon1.jpg");
+    private Image WholePizza_pic = new Image("GUI/images/Whole.jpg");
+    private Image LeftHalf_pic = new Image("GUI/images/LeftHalf.jpg");
+    private Image RightHalf_pic = new Image("GUI/images/RightHalf.jpg");
 
     //This method is where the look and feel of the meats menu derives
     public VBox BuildMeats(Stage window){

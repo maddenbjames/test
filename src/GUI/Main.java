@@ -1,9 +1,12 @@
 package GUI;
 
 //javafx packages
+import sample.Order;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
 
 public class Main extends Application{
 
@@ -14,6 +17,7 @@ public class Main extends Application{
     public static void main(String[] args){
         launch(args);
     }
+
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -26,5 +30,11 @@ public class Main extends Application{
 
         window.setScene(login_menu);
         window.show();
+    }
+
+    static Order order = new Order();
+
+    static Order getOrder() {
+        return order;
     }
 }

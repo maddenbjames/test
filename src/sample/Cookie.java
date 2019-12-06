@@ -1,3 +1,5 @@
+package sample;
+
 public class Cookie
 {
     private double price;
