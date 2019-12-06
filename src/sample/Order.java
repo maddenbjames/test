@@ -22,6 +22,10 @@ public class Order {
         this.order.add(cookie);
     }
 
+    public ArrayList<Object> getArrayList() {
+        return this.order;
+    }
+
     public void printOrder() {
         for(int i = 0; i < order.size(); i ++) {
             System.out.println((order.get(i)).toString());

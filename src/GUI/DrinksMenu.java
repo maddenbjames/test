@@ -11,8 +11,10 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.scene.text.Font;
+import sample.Order;
 
 public class DrinksMenu {
+    Order order = Main.getOrder();
 
     //Buttons used in the drinks menu
     private Button MainMenu_btn = new Button("Main Menu");
@@ -409,6 +411,20 @@ public class DrinksMenu {
         Back_btn.setOnAction(e -> window.getScene().setRoot(mm.BuildMainMenu(window)));
         MainMenu_btn.setOnAction(e -> window.getScene().setRoot(sides.BuildSides(window)));
         Cart_btn.setOnAction(e -> window.getScene().setRoot(cart.BuildCart(window)));
+        Pepsi_btn.setOnAction((event) -> {
+            if(Large_radio.isSelected() == true) {
+
+            }
+        });
+        //DietPepsi_btn
+        //SierraMist_btn
+        //DietSierraMist_btn
+        //RootBeer_btn
+        //DietRootBeer_btn
+        //Orange_btn
+        //DietOrange_btn
+        //Lemonade_btn
+        //Water_btn
     }
 
     //This method handles the fonts in the drinks menu
