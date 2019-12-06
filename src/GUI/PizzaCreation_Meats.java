@@ -106,7 +106,7 @@ public class PizzaCreation_Meats {
         hb10.setPadding(new Insets(0,0,0,125));
 
         //Alignment for the HBoxes
-        hb14.setAlignment(Pos.CENTER_LEFT);
+        hb14.setAlignment(Pos.CENTER_RIGHT);
         hb0.setAlignment(Pos.CENTER_RIGHT);
         hb1.setAlignment(Pos.CENTER_LEFT);
         hb2.setAlignment(Pos.CENTER);
@@ -121,7 +121,7 @@ public class PizzaCreation_Meats {
 
         //disables the visibility but NOT the functionality of the back button
         hb1.setOpacity(0);
-        hb0.setOpacity(100);
+        hb0.setOpacity(0);
         hb13.setOpacity(0);
 
         //This code is to put a border around the VBoxes to make user viability easier.

@@ -28,6 +28,7 @@ public class Main extends Application{
 
         login_menu = new Scene(loginMenu.BuildLogin(window), 1366, 786);
 
+        window.setResizable(false);
         window.setScene(login_menu);
         window.show();
     }

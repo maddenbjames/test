@@ -147,7 +147,7 @@ public class PizzaCreation_Veggies {
         hb13.setPadding(new Insets(0,-250,0,0));
 
         //Alignment for the HBoxes
-        hb15.setAlignment(Pos.CENTER_LEFT);
+        hb15.setAlignment(Pos.CENTER_RIGHT);
         hb0.setAlignment(Pos.CENTER_RIGHT);
         hb1.setAlignment(Pos.CENTER_LEFT);
         hb2.setAlignment(Pos.CENTER);
@@ -180,7 +180,7 @@ public class PizzaCreation_Veggies {
 
         //disables the visibility but NOT the functionality of the back button
         hb1.setOpacity(0);
-        hb0.setOpacity(100);
+        hb0.setOpacity(0);
         hb14.setOpacity(0);
 
         //Sets the all components onto the scene
