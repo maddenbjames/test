@@ -14,10 +14,13 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
+import java.awt.event.ActionEvent;
+
 class LoginMenu {
     //Buttons are initiated.
     private Button Guest_btn = new Button("Sign In As Guest");
     private Button LogIn_btn = new Button("Log In");
+    private Button CreateAccount_btn = new Button("Create Account");
 
     //Labels and image template used in his window
     private Label password_Lbl = new Label(" ");
@@ -50,12 +53,13 @@ class LoginMenu {
         //Sets the all components onto the scene
         hb1.getChildren().addAll(email_Lbl, email);
         hb2.getChildren().addAll(password_lbl, password);
-        hb3.getChildren().addAll(LogIn_btn, Guest_btn);
+        hb3.getChildren().addAll(LogIn_btn, CreateAccount_btn, Guest_btn);
         vb1.getChildren().addAll(welcome_Lbl, plsLogin_Lbl, hb1, hb2, password_Lbl, hb3);
         vb2.getChildren().addAll(new ImageView(Template), vb1);
 
         Login_ButtonActions(window);
         FontsUsed();
+        //PopUpBox();
 
         return  vb2;
     }
@@ -79,5 +83,9 @@ class LoginMenu {
         LogIn_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
         Guest_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
     }
+
+   // private void PopupBox(){
+
+   // }
 
 }
