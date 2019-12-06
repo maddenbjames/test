@@ -1,12 +1,12 @@
 package sample;
 
-public class Cookie
+public class Cookie extends Sides
 {
     private double price;
 
     public Cookie()
     {
-        this.price=0.0;
+        this.price=4.0;
     }
 
     public void addPrice(double amount)

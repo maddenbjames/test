@@ -1,15 +1,16 @@
 package sample;
 
-public class BreadBites
+public class BreadBites extends Sides
 {
     private boolean garlic;
     private boolean butter;
     private double price;
 
-    public BreadBites()
+    public BreadBites(boolean garlic, boolean butter)
     {
-        this.garlic = this.butter = false;
-        this.price = 0.0;
+        this.garlic = garlic;
+        this.butter = butter;
+        this.price = 2.0;
     }
 
     public void addGarlic()

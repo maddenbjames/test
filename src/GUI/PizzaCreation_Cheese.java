@@ -10,9 +10,12 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.scene.text.Font;
+import sample.Order;
+import sample.Pizza;
 
 public class PizzaCreation_Cheese {
 
+    Order order = Main.getOrder();
     //Buttons for Pizza Creation Menus initiated.
     private Button MainMenu = new Button("Main Menu");
     private Button Back_btn = new Button("Back to Crusts");
@@ -261,6 +264,87 @@ public class PizzaCreation_Cheese {
         Meats_btn.setOnAction(e -> window.getScene().setRoot(pizzaCreation_meats.BuildMeats(window)));
         Veggies_btn.setOnAction(e -> window.getScene().setRoot(pizzaCreation_veggies.BuildVeggies(window)));
         Next_btn.setOnAction(e -> window.getScene().setRoot(pizzaCreation_meats.BuildMeats(window)));
+
+        Pizza pizza = new Pizza();
+        for(Object obj: order.getArrayList())
+            if (obj instanceof Pizza)
+                pizza = (Pizza)obj;
+
+        //Cheese type
+        NoCheeseLeft_radio.setOnAction(e ->{
+            pizza.chooseCheese("nocheese");
+            pizza.chooseCheeseSpread(0);
+        });
+        NoCheeseRight_radio.setOnAction(e ->{
+            pizza.chooseCheese("nocheese");
+            pizza.chooseCheeseSpread(1);
+        });
+        NoCheeseWhole_radio.setOnAction(e ->{
+            pizza.chooseCheese("nocheese");
+            pizza.chooseCheeseSpread(2);
+        });
+        RegCheeseLeft_radio.setOnAction(e ->{
+            pizza.chooseCheese("regularcheese");
+            pizza.chooseCheeseSpread(0);
+        });
+        RegCheeseRight_radio.setOnAction(e ->{
+            pizza.chooseCheese("regularcheese");
+            pizza.chooseCheeseSpread(1);
+        });
+        RegCheeseWhole_radio.setOnAction(e ->{
+            pizza.chooseCheese("regularcheese");
+            pizza.chooseCheeseSpread(2);
+        });
+        ExtraCheeseLeft_radio.setOnAction(e ->{
+            pizza.chooseCheese("extracheese");
+            pizza.chooseCheeseSpread(0);
+        });
+        ExtraCheeseRight_radio.setOnAction(e ->{
+            pizza.chooseCheese("extracheese");
+            pizza.chooseCheeseSpread(1);
+        });
+        ExtraCheeseWhole_radio.setOnAction(e ->{
+            pizza.chooseCheese("extracheese");
+            pizza.chooseCheeseSpread(2);
+        });
+
+        //Choose Sauce
+        NoSauceLeft_radio.setOnAction(e ->{
+            pizza.chooseSauce("nosauce");
+            pizza.chooseSauceSpread(0);
+        });
+        NoSauceRight_radio.setOnAction(e ->{
+            pizza.chooseSauce("nosauce");
+            pizza.chooseSauceSpread(1);
+        });
+        NoSauceWhole_radio.setOnAction(e ->{
+            pizza.chooseSauce("nosauce");
+            pizza.chooseSauceSpread(2);
+        });
+        RegSauceLeft_radio.setOnAction(e ->{
+            pizza.chooseSauce("regularsauce");
+            pizza.chooseSauceSpread(0);
+        });
+        RegSauceRight_radio.setOnAction(e ->{
+            pizza.chooseSauce("regularsauce");
+            pizza.chooseSauceSpread(1);
+        });
+        RegSauceWhole_radio.setOnAction(e ->{
+            pizza.chooseSauce("regularsauce");
+            pizza.chooseSauceSpread(2);
+        });
+        ExtraSauceLeft_radio.setOnAction(e ->{
+            pizza.chooseSauce("extrasauce");
+            pizza.chooseSauceSpread(0);
+        });
+        ExtraSauceRight_radio.setOnAction(e ->{
+            pizza.chooseSauce("extrasauce");
+            pizza.chooseSauceSpread(1);
+        });
+        ExtraSauceWhole_radio.setOnAction(e ->{
+            pizza.chooseSauce("extrasauce");
+            pizza.chooseSauceSpread(2);
+        });
 
     }
 

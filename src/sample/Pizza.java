@@ -6,6 +6,7 @@ public class Pizza
     private boolean[] pizzaToppings = new boolean[12];
     private int[] pizzaSpread = new int[12];
 
+
     private String size, pizzaType;
 
     //cheese and sauce
@@ -258,7 +259,7 @@ public class Pizza
                 this.tomatoes=false;
                 topA(5,false);
                 break;
-            case "pineapple":
+            case "pineapples":
                 this.pineapple=false;
                 topA(6,false);
                 break;

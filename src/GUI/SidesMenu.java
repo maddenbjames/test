@@ -10,9 +10,14 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.scene.text.Font;
+import sample.BreadBites;
+import sample.BreadSticks;
+import sample.Cookie;
+import sample.Order;
 
 public class SidesMenu {
 
+    Order order = Main.getOrder();
     //Buttons used for the sides Menu
     private Button MainMenu_btn = new Button("Main Menu");
     private Button Back_btn = new Button("Back");
@@ -157,6 +162,59 @@ public class SidesMenu {
         Back_btn.setOnAction(e -> window.getScene().setRoot(mm.BuildMainMenu(window)));
         MainMenu_btn.setOnAction(e -> window.getScene().setRoot(drinks.BuildDrinks(window)));
         Cart_btn.setOnAction(e-> window.getScene().setRoot(cart.BuildCart(window)));
+
+        //Adding sides to order
+        Breadsticks_btn.setOnAction(e-> {
+            //for (Type curInstance: CollectionOf<Type>)
+            //loop through order to find Sides
+            if(Garlic1_radio.isSelected() && !Butter1_radio.isSelected())
+            {
+                //garlic no butter
+                order.addSide(new BreadSticks(true, false));
+            }
+            else if(!Garlic1_radio.isSelected() && Butter1_radio.isSelected())
+            {
+                //butter no garlic
+                order.addSide(new BreadSticks(false, true));
+            }
+            else if(Garlic1_radio.isSelected() && Butter1_radio.isSelected())
+            {
+                //butter and garlic
+                order.addSide(new BreadSticks(true, true));
+            }
+            else
+            {
+                order.addSide(new BreadSticks(false, false));
+            }
+                //neither
+        });
+        BreadBites_btn.setOnAction(e->{
+            if(Garlic2_radio.isSelected() && !Butter2_radio.isSelected())
+            {
+                //garlic no butter
+                order.addSide(new BreadBites(true, false));
+            }
+            else if(!Garlic2_radio.isSelected() && Butter2_radio.isSelected())
+            {
+                //butter no garlic
+                order.addSide(new BreadBites(false, true));
+            }
+            else if(Garlic2_radio.isSelected() && Butter2_radio.isSelected())
+            {
+                //butter and garlic
+                order.addSide(new BreadBites(true, true));
+            }
+            else
+            {
+                order.addSide(new BreadBites(false, false));
+            }
+            //neither
+        });
+        Cookie_btn.setOnAction(e->{
+            //add to order
+            order.addSide(new Cookie());
+        });
+
     }
 
     private void FontsUsed(){

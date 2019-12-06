@@ -9,7 +9,7 @@ public class Sides
     private Cookie cookie;
     private BreadBites breadBite;
 //  private Sides[] sideOrder;
-    private LinkedList<Object> sideList = new LinkedList<Object>();
+    private LinkedList<Object> list = new LinkedList<Object>();
 
     public Sides()
     {
@@ -35,33 +35,33 @@ public class Sides
     //Updates array sideOrder with a new object of cookie
     public void addCookie(Cookie cookie)
     {
-        sideList.add(cookie);
+        list.add(cookie);
     }
 
     public void removeCookie(Cookie cookie)
     {
-        sideList.remove(cookie);
+        list.remove(cookie);
     }
     //Updates array sideOrder with a new object of breadstick
     public void addBreadstick(BreadSticks bd)
     {
-        sideList.add(bd);
+        list.add(bd);
     }
 
     public void removeBreadstick(BreadSticks bd)
     {
-        sideList.remove(bd);
+        list.remove(bd);
     }
 
     //Updates array sideOrder with a new object of breadbites
     public void addBreadBite(BreadBites bb)
     {
-        sideList.add(bb);
+        list.add(bb);
     }
 
     public void removeBreadBite(BreadBites bb)
     {
-        sideList.remove(bb);
+        list.remove(bb);
     }
 
 

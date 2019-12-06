@@ -10,9 +10,12 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.scene.text.Font;
+import sample.Order;
+import sample.Pizza;
 
 public class PizzaCreation_Crust {
 
+    Order order = Main.getOrder();
     //Buttons for Pizza Creation Menus initiated.
     private Button MainMenu = new Button("Main Menu");
     private Button Cart_btn = new Button("Go To Cart");
@@ -214,6 +217,37 @@ public class PizzaCreation_Crust {
         Meats_btn.setOnAction(e -> window.getScene().setRoot(pizzaCreation_meats.BuildMeats(window)));
         Veggies_btn.setOnAction(e -> window.getScene().setRoot(pizzaCreation_veggies.BuildVeggies(window)));
         Next_btn.setOnAction(e -> window.getScene().setRoot(pizzaCreation_cheese.BuildCheese(window)));
+
+        Pizza pizza = new Pizza();
+        for(Object obj: order.getArrayList())
+            if (obj instanceof Pizza)
+                pizza = (Pizza)obj;
+
+        //Changing Size
+        Small_radio.setOnAction(e ->{
+            pizza.chooseSize("small");
+        });
+        Medium_radio.setOnAction(e ->{
+            pizza.chooseSize("medium");
+        });
+        Large_radio.setOnAction(e ->{
+            pizza.chooseSize("large");
+        });
+        ExtraLarge_radio.setOnAction(e ->{
+            pizza.chooseSize("extraLarge");
+        });
+
+        //Crust type
+        Regular_radio.setOnAction(e ->{
+            pizza.chooseType("regular");
+        });
+        Pan_radio.setOnAction(e ->{
+            pizza.chooseType("pan");
+        });
+        DeepDish_radio.setOnAction(e ->{
+            pizza.chooseType("deepDish");
+        });
+
     }
     private void FontsUsed(){
         //Sets fonts for the labels.

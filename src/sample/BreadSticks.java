@@ -1,15 +1,23 @@
 package sample;
 
-public class BreadSticks
+public class BreadSticks extends Sides
 {
     private boolean garlic;
     private boolean butter;
     private double price;
 
+    public BreadSticks(boolean garlic, boolean butter)
+    {
+        this.garlic = garlic;
+        this.butter = butter;
+        this.price = 2.0;
+    }
+
     public BreadSticks()
     {
-        this.garlic = this.butter = false;
-        this.price = 0.0;
+        this.garlic = false;
+        this.butter = false;
+        this.price = 2.0;
     }
 
     public void addGarlic()
