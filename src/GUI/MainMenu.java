@@ -11,8 +11,11 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.scene.text.Font;
+import sample.*;
+import GUI.Main;
 
 class MainMenu {
+
     //Buttons used for the main menu
     private Button Pizza_btn = new Button("Build A Pizza");
     private Button Drinks_btn = new Button("Drinks");
@@ -65,6 +68,7 @@ class MainMenu {
 
     private void MainMenu_ButtonActions(Stage window){
 
+
         //Sets the size of the back button to match the template
         Back_btn.setPrefSize(75,75);
 
@@ -81,6 +85,7 @@ class MainMenu {
         Drinks_btn.setOnAction(e -> window.getScene().setRoot(drinksMenu.BuildDrinks(window)));
         Sides_btn.setOnAction(e -> window.getScene().setRoot(sidesMenu.BuildSides(window)));
         Profile_btn.setOnAction(e -> window.getScene().setRoot(profileMenu.BuildProfile(window)));
+
     }
     private void FontsUsed(){
         //Changes the fonts of the labels and buttons
