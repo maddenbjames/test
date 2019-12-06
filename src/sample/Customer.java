@@ -48,20 +48,39 @@ public class Customer {
         nameofUser = newName;
     }
 
+    //Returns the portion of the string line that specifies the username
+    public String getAccountUsername(String fileLine){
+        return fileLine;
+    }
+    //Returns the portion of the string line that specifies the user's password
+    public String getPassword(String fileLine){
+        return fileLine;
+    }
+
+    //Returns the portion of the string that specifies the user's address
+    public String getAddress(String fileLine){
+        return fileLine;
+    }
+    //Returns the portion of the string that specifies the user's phone number
+    public int getPhoneNumber(String fileLine){
+        return fileLine;
+    }
+    //Returns the portion of the string that specifies the user's name
+    public String getNameofUser(String fileLine){
+        return fileLine;
+    }
+
     public boolean checkValidUser(String usernameInput, String passwordInput) {
 
         if (usernameInput.equals(accountUsername)) {
-            if (passwordInput.equals(password)) {
-                return true;
-            }
+            return passwordInput.equals(password);
         }
         return false;
     }
 
     @Override
     public String toString() {
-        String out = ("Entered would be the formatted");
-        return out;
+        return ("Email: " + accountUsername + "|| Password: " + password + "|| Address: " + address + "|| Name: " + nameofUser + "|| PhoneNumber: "+ phoneNumber + "|| TextLine#: "+ txtFileLineNumber);
     }
 
 }
