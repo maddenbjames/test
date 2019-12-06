@@ -45,7 +45,7 @@ public class PayWithCard {
     private ChoiceBox<Integer> ExDateYear_DropDown = new ChoiceBox<>();
 
     //Images used in the cart menu
-    private Image Template= new Image("GUI/PizzaProject Info Template_Back.png");
+    private Image Template= new Image("GUI/images/PizzaProject Info Template_Back.png");
 
     public VBox BuildPayWithCard(Stage window){
         //VBoxes used in this method

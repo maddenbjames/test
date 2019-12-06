@@ -140,17 +140,17 @@ public class DrinksMenu {
     private Label Small9_Lbl = new Label("Small");
 
     //Images used in the Drinks menu
-    private Image Template = new Image("GUI/PizzaProject Info Template_Back.png");
-    private Image Pepsi_pic = new Image("GUI/Pepsi1.jpg");
-    private Image DietPepsi_pic = new Image("GUI/DietPepsi.jpg");
-    private Image SierraMist_pic = new Image("GUI/SierraMist1.jpg");
-    private Image DietSierraMist_pic = new Image("GUI/DietSierraMist1.jpg");
-    private Image RootBeer_pic = new Image("GUI/RootBeer1.jpg");
-    private Image DietRootBeer_pic = new Image("GUI/DietRootBeer.jpg");
-    private Image Orange_pic = new Image("GUI/Orange1.jpg");
-    private Image DietOrange_pic = new Image("GUI/DietOrange.jpg");
-    private Image Lemonade_pic = new Image("GUI/Lemonade1.jpg");
-    private Image Water_pic = new Image("GUI/Water1.jpg");
+    private Image Template = new Image("GUI/images/PizzaProject Info Template_Back.png");
+    private Image Pepsi_pic = new Image("GUI/images/Pepsi1.jpg");
+    private Image DietPepsi_pic = new Image("GUI/images/DietPepsi.jpg");
+    private Image SierraMist_pic = new Image("GUI/images/SierraMist1.jpg");
+    private Image DietSierraMist_pic = new Image("GUI/images/DietSierraMist1.jpg");
+    private Image RootBeer_pic = new Image("GUI/images/RootBeer1.jpg");
+    private Image DietRootBeer_pic = new Image("GUI/images/DietRootBeer.jpg");
+    private Image Orange_pic = new Image("GUI/images/Orange1.jpg");
+    private Image DietOrange_pic = new Image("GUI/images/DietOrange.jpg");
+    private Image Lemonade_pic = new Image("GUI/images/Lemonade1.jpg");
+    private Image Water_pic = new Image("GUI/images/Water1.jpg");
 
     public VBox BuildDrinks(Stage window){
         //VBoxes used in this method

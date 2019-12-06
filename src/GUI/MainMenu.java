@@ -11,8 +11,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.scene.text.Font;
-import sample.*;
-import GUI.Main;
 
 class MainMenu {
 
@@ -27,7 +25,7 @@ class MainMenu {
     private Label main_menu_lbl = new Label("Main Menu");
 
     //Constants in every scene
-    private Image Template = new Image("GUI/PizzaProject Info Template_Back.png");
+    private Image Template = new Image("GUI/images/PizzaProject Info Template_Back.png");
 
    public VBox BuildMainMenu(Stage window){
         //VBoxes and HBoxes are initiated.

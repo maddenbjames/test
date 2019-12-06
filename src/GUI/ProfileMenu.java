@@ -32,7 +32,7 @@ public class ProfileMenu {
     private TextField Additional_field = new TextField();
 
     //Images used for the Profile Menu
-    private Image Template = new Image("GUI/PizzaProject Info Template_Back.png");
+    private Image Template = new Image("GUI/images/PizzaProject Info Template_Back.png");
 
     public VBox BuildProfile(Stage window){
         //VBoxes used in this method

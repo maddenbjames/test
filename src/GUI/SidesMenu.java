@@ -41,10 +41,10 @@ public class SidesMenu {
     private RadioButton Butter2_radio = new RadioButton();
 
     //Images used for the Sides menu
-    private Image Template = new Image("GUI/PizzaProject Info Template_Back.png");
-    private Image Breadsticks_pic = new Image("GUI/breadsticks1.jpg");
-    private Image BreadBites_pic = new Image("GUI/bread bites1.jpg");
-    private Image Cookie_pic = new Image("GUI/cookie1.jpg");
+    private Image Template = new Image("GUI/images/PizzaProject Info Template_Back.png");
+    private Image Breadsticks_pic = new Image("GUI/images/breadsticks1.jpg");
+    private Image BreadBites_pic = new Image("GUI/images/bread bites1.jpg");
+    private Image Cookie_pic = new Image("GUI/images/cookie1.jpg");
 
     public VBox BuildSides(Stage window){
         //VBoxes used for this method

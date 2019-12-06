@@ -23,7 +23,7 @@ public class Receipt {
     private Label Space_Lbl = new Label(" ");
 
     //Images used in the cart menu
-    private Image Template= new Image("GUI/PizzaProject Info Template.png");
+    private Image Template= new Image("GUI/images/PizzaProject Info Template.png");
 
     public VBox BuildReceipt(Stage window){
         //VBoxes used for this method

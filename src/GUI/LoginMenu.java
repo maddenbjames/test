@@ -13,7 +13,6 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-import sample.Order;
 
 class LoginMenu {
     //Buttons are initiated.
@@ -29,7 +28,7 @@ class LoginMenu {
 
     private PasswordField password = new PasswordField();
     private TextField email = new TextField();
-    private Image Template = new Image("GUI/PizzaProject Info Template.png");
+    private Image Template = new Image("GUI/images/PizzaProject Info Template.png");
 
     VBox BuildLogin(Stage window){
         //these boxes are set up to store everything

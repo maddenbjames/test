@@ -67,11 +67,11 @@ public class PizzaCreation_Cheese {
     private RadioButton ExtraSauceWhole_radio = new RadioButton();
 
     //Images for cheese Menu
-    private Image Template = new Image("GUI/PizzaProject Info Template_Back.png");
-    private Image Cheese_pic = new Image("GUI/Cheese3.png");
-    private Image WholePizza_pic = new Image("GUI/Whole.jpg");
-    private Image LeftHalf_pic = new Image("GUI/LeftHalf.jpg");
-    private Image RightHalf_pic = new Image("GUI/RightHalf.jpg");
+    private Image Template = new Image("GUI/images/PizzaProject Info Template_Back.png");
+    private Image Cheese_pic = new Image("GUI/images/Cheese3.png");
+    private Image WholePizza_pic = new Image("GUI/images/Whole.jpg");
+    private Image LeftHalf_pic = new Image("GUI/images/LeftHalf.jpg");
+    private Image RightHalf_pic = new Image("GUI/images/RightHalf.jpg");
 
     //This method is where the look and feel of the cheese menu derives
     public VBox BuildCheese(Stage window){

@@ -77,18 +77,18 @@ public class PizzaCreation_Veggies {
     private Label Jalapeno_Lbl = new Label("Jalapenos");
 
     //Constants in every scene
-    private Image Template= new Image("GUI/PizzaProject Info Template_Back.png");
-    private Image Tomatoes_pic = new Image("GUI/tomatoes1.jpg");
-    private Image Pineapple_pic = new Image("GUI/pineapple1.jpg");
-    private Image Spinach_pic = new Image("GUI/spinache1.jpg");
-    private Image Mushrooms_pic = new Image("GUI/mushrooms1.jpg");
-    private Image Onions_pic = new Image("GUI/onions1.jpg");
-    private Image GreenPeppers_pic = new Image("GUI/green pepper1.jpg");
-    private Image BlackOlives_pic = new Image("GUI/black olives1.jpg");
-    private Image Jalapenos_pic = new Image("GUI/jalapenos1.jpg");
-    private Image WholePizza_pic = new Image("GUI/Whole.jpg");
-    private Image LeftHalf_pic = new Image("GUI/LeftHalf.jpg");
-    private Image RightHalf_pic = new Image("GUI/RightHalf.jpg");
+    private Image Template= new Image("GUI/images/PizzaProject Info Template_Back.png");
+    private Image Tomatoes_pic = new Image("GUI/images/tomatoes1.jpg");
+    private Image Pineapple_pic = new Image("GUI/images/pineapple1.jpg");
+    private Image Spinach_pic = new Image("GUI/images/spinache1.jpg");
+    private Image Mushrooms_pic = new Image("GUI/images/mushrooms1.jpg");
+    private Image Onions_pic = new Image("GUI/images/onions1.jpg");
+    private Image GreenPeppers_pic = new Image("GUI/images/green pepper1.jpg");
+    private Image BlackOlives_pic = new Image("GUI/images/black olives1.jpg");
+    private Image Jalapenos_pic = new Image("GUI/images/jalapenos1.jpg");
+    private Image WholePizza_pic = new Image("GUI/images/Whole.jpg");
+    private Image LeftHalf_pic = new Image("GUI/images/LeftHalf.jpg");
+    private Image RightHalf_pic = new Image("GUI/images/RightHalf.jpg");
 
     //This method is where the look and feel of the Veggies menu derives
     public VBox BuildVeggies(Stage window){
