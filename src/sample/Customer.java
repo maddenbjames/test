@@ -62,9 +62,10 @@ public class Customer {
         return fileLine;
     }
     //Returns the portion of the string that specifies the user's phone number
-    public int getPhoneNumber(String fileLine){
+   /* public int getPhoneNumber(String fileLine){
         return fileLine;
     }
+    */
     //Returns the portion of the string that specifies the user's name
     public String getNameofUser(String fileLine){
         return fileLine;
