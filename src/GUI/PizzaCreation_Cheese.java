@@ -10,12 +10,9 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.scene.text.Font;
-import sample.Order;
-import sample.Pizza;
 
 public class PizzaCreation_Cheese {
 
-    Order order = Main.getOrder();
     //Buttons for Pizza Creation Menus initiated.
     private Button MainMenu = new Button("Main Menu");
     private Button Back_btn = new Button("Back to Crusts");
@@ -24,9 +21,11 @@ public class PizzaCreation_Cheese {
     private Button Cheese_btn = new Button("Cheese");
     private Button Meats_btn = new Button("Meats");
     private Button Veggies_btn = new Button ("Veggies");
-    private Button  Next_btn = new Button("Next");
+    private Button Next_btn = new Button("Next");
+    private Button AddToCart_btn = new Button ("Add To Cart");
 
     //Labels used in this menu
+    private Label CartInfo_Lbl = new Label ("Cart");
     private Label PriceInfo_Lbl = new Label("Price Information");
     private Label CheeseAndSauce_Lbl = new Label("Cheese And Sauce");
     private Label CheeseOptions_Lbl = new Label ("Cheese Options");
@@ -100,6 +99,7 @@ public class PizzaCreation_Cheese {
         HBox hb11 = new HBox(20);
         HBox hb12 = new HBox(20);
         HBox hb13 = new HBox(100);
+        HBox hb14 = new HBox(100);
 
         //Padding for the VBoxes
         vb1.setPadding(new Insets(0,0,-15,-400));
@@ -118,6 +118,7 @@ public class PizzaCreation_Cheese {
         vb6.setAlignment(Pos.CENTER);
 
         //Padding for the HBoxes
+        hb14.setPadding(new Insets(-135,0,0,0));
         hb13.setPadding(new Insets(-100,0,0,0));
         hb0.setPadding(new Insets(-135,0,0,0));// cart button
         hb1.setPadding(new Insets(-80,0,0,0));//back button
@@ -132,6 +133,7 @@ public class PizzaCreation_Cheese {
         hb10.setPadding(new Insets(15,0, 15, 0));
 
         //Alignment for the HBoxes
+        hb14.setAlignment(Pos.CENTER_RIGHT);
         hb0.setAlignment(Pos.CENTER_RIGHT);
         hb1.setAlignment(Pos.CENTER_LEFT);
         hb2.setAlignment(Pos.CENTER);
@@ -149,6 +151,7 @@ public class PizzaCreation_Cheese {
 
         //disables the visibility but NOT the functionality of the back button
         hb1.setOpacity(0);
+        hb0.setOpacity(0);
         hb13.setOpacity(0);
 
         //This code is to put a border around the VBoxes to make user viability easier.
@@ -160,10 +163,14 @@ public class PizzaCreation_Cheese {
         vb2.setStyle(borderLayout);
         vb4.setStyle(borderLayout);
         hb11.setStyle(borderLayout);
+        hb14.setStyle(borderLayout);
 
         //Sets the all components onto the scene
         hb13.getChildren().addAll(MainMenu);
+
+        hb14.getChildren().addAll(CartInfo_Lbl);
         hb0.getChildren().addAll(Cart_btn);
+
         hb1.getChildren().addAll(Back_btn);
         hb2.getChildren().addAll(NoCheese_Lbl, NoCheeseLeft_radio, NoCheeseRight_radio, NoCheeseWhole_radio);
         hb3.getChildren().addAll(RegCheese_Lbl, RegCheeseLeft_radio, RegCheeseRight_radio, RegCheeseWhole_radio);
@@ -181,7 +188,7 @@ public class PizzaCreation_Cheese {
         vb3.getChildren().addAll(SauceOptions_Lbl);
         vb4.getChildren().addAll(hb5, hb6, hb7);
         vb5.getChildren().addAll(hb9, vb2, vb3, vb4);
-        vb6.getChildren().addAll(new ImageView(Template), hb13, hb0, hb1, hb10, hb12, hb8);
+        vb6.getChildren().addAll(new ImageView(Template), hb13, hb14, hb0, hb1, hb10, hb12, hb8);
 
         //Calls other methods in this class
         FontsUsed();
@@ -264,107 +271,6 @@ public class PizzaCreation_Cheese {
         Meats_btn.setOnAction(e -> window.getScene().setRoot(pizzaCreation_meats.BuildMeats(window)));
         Veggies_btn.setOnAction(e -> window.getScene().setRoot(pizzaCreation_veggies.BuildVeggies(window)));
         Next_btn.setOnAction(e -> window.getScene().setRoot(pizzaCreation_meats.BuildMeats(window)));
-
-
-     //   Pizza pizza = new Pizza();
-
-     //   for(Pizza obj: order.getPizzas())
-     //           pizza = obj;
-
-        //Cheese type
-        NoCheeseLeft_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.chooseCheese("nocheese");
-            pizza.chooseCheeseSpread(0);
-        });
-        NoCheeseRight_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.chooseCheese("nocheese");
-            pizza.chooseCheeseSpread(1);
-        });
-        NoCheeseWhole_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.chooseCheese("nocheese");
-            pizza.chooseCheeseSpread(2);
-        });
-        RegCheeseLeft_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.chooseCheese("regularcheese");
-            pizza.chooseCheeseSpread(0);
-        });
-        RegCheeseRight_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.chooseCheese("regularcheese");
-            pizza.chooseCheeseSpread(1);
-        });
-        RegCheeseWhole_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.chooseCheese("regularcheese");
-            pizza.chooseCheeseSpread(2);
-        });
-        ExtraCheeseLeft_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.chooseCheese("extracheese");
-            pizza.chooseCheeseSpread(0);
-        });
-        ExtraCheeseRight_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.chooseCheese("extracheese");
-            pizza.chooseCheeseSpread(1);
-        });
-        ExtraCheeseWhole_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.chooseCheese("extracheese");
-            pizza.chooseCheeseSpread(2);
-        });
-
-        //Choose Sauce
-        NoSauceLeft_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.chooseSauce("nosauce");
-            pizza.chooseSauceSpread(0);
-        });
-        NoSauceRight_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.chooseSauce("nosauce");
-            pizza.chooseSauceSpread(1);
-        });
-        NoSauceWhole_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.chooseSauce("nosauce");
-            pizza.chooseSauceSpread(2);
-        });
-        RegSauceLeft_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.chooseSauce("regularsauce");
-            pizza.chooseSauceSpread(0);
-        });
-        RegSauceRight_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.chooseSauce("regularsauce");
-            pizza.chooseSauceSpread(1);
-        });
-        RegSauceWhole_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.chooseSauce("regularsauce");
-            pizza.chooseSauceSpread(2);
-        });
-        ExtraSauceLeft_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.chooseSauce("extrasauce");
-            pizza.chooseSauceSpread(0);
-        });
-        ExtraSauceRight_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.chooseSauce("extrasauce");
-            pizza.chooseSauceSpread(1);
-        });
-        ExtraSauceWhole_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.chooseSauce("extrasauce");
-            pizza.chooseSauceSpread(2);
-        });
-
     }
 
     private void FontsUsed(){
@@ -379,6 +285,7 @@ public class PizzaCreation_Cheese {
         NoSauce_Lbl.setFont(Font.font("Calibri", FontWeight.SEMI_BOLD,18));
         RegSauce_Lbl.setFont(Font.font("Calibri", FontWeight.SEMI_BOLD,18));
         ExtraSauce_Lbl.setFont(Font.font("Calibri", FontWeight.SEMI_BOLD,18));
+        CartInfo_Lbl.setFont(Font.font("Calibri", FontWeight.BOLD,18));
 
         //Sets Fonts for all the Buttons
         Back_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
@@ -388,14 +295,6 @@ public class PizzaCreation_Cheese {
         Meats_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
         Veggies_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
         Next_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
-    }
-
-    private Pizza findpizza()
-    {
-        Pizza p = new Pizza();
-        for(Pizza obj: order.getPizzas())
-             p=obj;
-
-        return p;
+        AddToCart_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
     }
 }

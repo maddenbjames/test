@@ -46,13 +46,13 @@ public class Order {
             System.out.println((pizzas.get(i)).toString());
         }
         for(int i = 0; i < sides.size(); i ++) {
-            System.out.println((pizzas.get(i)).toString());
+            System.out.println((sides.get(i)).toString());
         }
         for(int i = 0; i < cookies.size(); i ++) {
-            System.out.println((pizzas.get(i)).toString());
+            System.out.println((cookies.get(i)).toString());
         }
         for(int i = 0; i < drinks.size(); i ++) {
-            System.out.println((pizzas.get(i)).toString());
+            System.out.println((drinks.get(i)).toString());
         }
     }
 

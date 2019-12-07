@@ -10,11 +10,8 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.scene.text.Font;
-import sample.Order;
-import sample.Pizza;
 
 public class PizzaCreation_Meats {
-    Order order = Main.getOrder();
     //Buttons for Pizza Creation Menus initiated.
     private Button MainMenu = new Button("Main Menu");
     private Button Cart_btn = new Button("Go To Cart");
@@ -24,6 +21,7 @@ public class PizzaCreation_Meats {
     private Button Meats_btn = new Button("Meats");
     private Button Veggies_btn = new Button ("Veggies");
     private Button Next_btn = new Button("Next");
+    private Button AddToCart_btn = new Button ("Add To Cart");
 
     //Radio Buttons used for the Meats menu
     //Pepperoni radios
@@ -47,6 +45,7 @@ public class PizzaCreation_Meats {
     private RadioButton CanadianWhole_radio = new RadioButton();
 
     //Labels for the meats menu
+    private Label CartInfo_Lbl = new Label ("Cart");
     private Label PriceInfo_Lbl= new Label("Price Info");
     private Label Meats_Lbl = new Label("Meats");
     private Label Pepperoni_Lbl = new Label("Pepperoni");
@@ -83,6 +82,7 @@ public class PizzaCreation_Meats {
         HBox hb10 = new HBox(80);
 
         HBox hb13 = new HBox(100);
+        HBox hb14 = new HBox(100);
 
         //Padding for the VBoxes
         vb2.setPadding(new Insets(-17,0,0,0));
@@ -92,6 +92,7 @@ public class PizzaCreation_Meats {
         vb2.setAlignment(Pos.CENTER);
 
         //Padding for the HBoxes
+        hb14.setPadding(new Insets(-135,0,0,0));
         hb13.setPadding(new Insets(-83,0,0,0));
         hb0.setPadding(new Insets(-135,0,0,0));// cart button
         hb1.setPadding(new Insets(-83,0,0,0));
@@ -105,6 +106,7 @@ public class PizzaCreation_Meats {
         hb10.setPadding(new Insets(0,0,0,125));
 
         //Alignment for the HBoxes
+        hb14.setAlignment(Pos.CENTER_RIGHT);
         hb0.setAlignment(Pos.CENTER_RIGHT);
         hb1.setAlignment(Pos.CENTER_LEFT);
         hb2.setAlignment(Pos.CENTER);
@@ -119,6 +121,7 @@ public class PizzaCreation_Meats {
 
         //disables the visibility but NOT the functionality of the back button
         hb1.setOpacity(0);
+        hb0.setOpacity(0);
         hb13.setOpacity(0);
 
         //This code is to put a border around the VBoxes to make user viability easier.
@@ -131,10 +134,14 @@ public class PizzaCreation_Meats {
         hb4.setStyle(borderLayout);
         hb5.setStyle(borderLayout);
         hb7.setStyle(borderLayout);
+        hb14.setStyle(borderLayout);
 
         //Sets the all components onto the scene
         hb13.getChildren().addAll(MainMenu);
+
+        hb14.getChildren().addAll(CartInfo_Lbl);
         hb0.getChildren().addAll(Cart_btn);
+
         hb1.getChildren().addAll(Back_btn);
         hb2.getChildren().addAll(new ImageView(Pep_pic), Pepperoni_Lbl, PepperoniLeft_radio, PepperoniRight_radio, PepperoniWhole_radio);
         hb3.getChildren().addAll(new ImageView(Sau_pic), Sausage_Lbl, SausageLeft_radio, SausageRight_radio, SausageWhole_radio);
@@ -147,7 +154,7 @@ public class PizzaCreation_Meats {
         hb10.getChildren().addAll(new ImageView(LeftHalf_pic),new ImageView(RightHalf_pic),new ImageView(WholePizza_pic));
 
         vb1.getChildren().addAll(hb2, hb3, hb4, hb5);
-        vb2.getChildren().addAll(new ImageView(Template), hb13, hb0, hb1, hb9, hb10, hb8, hb6);
+        vb2.getChildren().addAll(new ImageView(Template), hb13, hb14, hb0, hb1, hb9, hb10, hb8, hb6);
 
         //Calls other methods in this class
         FontsUsed();
@@ -216,68 +223,6 @@ public class PizzaCreation_Meats {
         Meats_btn.setOnAction(e -> window.getScene().setRoot(pizzaCreation_meats.BuildMeats(window)));
         Veggies_btn.setOnAction(e -> window.getScene().setRoot(pizzaCreation_veggies.BuildVeggies(window)));
         Next_btn.setOnAction(e -> window.getScene().setRoot(pizzaCreation_veggies.BuildVeggies(window)));
-
-        //Adding Meat toppings
-        PepperoniLeft_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("pepperoni");
-            pizza.addSpread("pepperoni",0);
-        });
-        PepperoniRight_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("pepperoni");
-            pizza.addSpread("pepperoni",1);
-        });
-        PepperoniWhole_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("pepperoni");
-            pizza.addSpread("pepperoni",2);
-        });
-        SausageLeft_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("sausage");
-            pizza.addSpread("sausage",0);
-        });
-        SausageRight_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("sausage");
-            pizza.addSpread("sausage",1);
-        });
-        SausageWhole_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("sausage");
-            pizza.addSpread("sausage",2);
-        });
-        HamLeft_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("ham");
-            pizza.addSpread("ham",0);
-        });
-        HamRight_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("ham");
-            pizza.addSpread("ham",1);
-        });
-        HamWhole_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("ham");
-            pizza.addSpread("ham",2);
-        });
-        CanadianLeft_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("canadianBacon");
-            pizza.addSpread("canadianBacon",0);
-        });
-        CanadianRight_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("canadianBacon");
-            pizza.addSpread("canadianBacon",1);
-        });
-        CanadianWhole_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("canadianBacon");
-            pizza.addSpread("canadianBacon",2);
-        });
     }
 
     private void FontsUsed(){
@@ -289,6 +234,7 @@ public class PizzaCreation_Meats {
         Ham_Lbl.setFont(Font.font("Calibri", FontWeight.BOLD,18));
         CanadianBacon_Lbl.setFont(Font.font("Calibri", FontWeight.BOLD,18));
         PriceInfo_Lbl.setFont(Font.font("Calibri", FontWeight.BOLD,18));
+        CartInfo_Lbl.setFont(Font.font("Calibri", FontWeight.BOLD,18));
 
         //Sets Fonts for all the Buttons
         Cart_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
@@ -298,14 +244,6 @@ public class PizzaCreation_Meats {
         Meats_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
         Veggies_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
         Next_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
-    }
-
-    private Pizza findpizza()
-    {
-        Pizza p = new Pizza();
-        for(Pizza obj: order.getPizzas())
-            p=obj;
-
-        return p;
+        AddToCart_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
     }
 }

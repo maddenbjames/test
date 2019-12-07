@@ -10,12 +10,9 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.scene.text.Font;
-import sample.Order;
-import sample.Pizza;
 
 public class PizzaCreation_Crust {
 
-    Order order = Main.getOrder();
     //Buttons for Pizza Creation Menus initiated.
     private Button MainMenu = new Button("Main Menu");
     private Button Cart_btn = new Button("Go To Cart");
@@ -25,8 +22,10 @@ public class PizzaCreation_Crust {
     private Button Meats_btn = new Button("Meats");
     private Button Veggies_btn = new Button ("Veggies");
     private Button Next_btn = new Button("Next");
+    private Button AddToCart_btn = new Button ("Add To Cart");
 
     //Labels used in this menu
+    private Label CartInfo_Lbl = new Label ("Cart");
     private Label PriceInfo_Lbl= new Label("Price Info");
     private Label CrustTitle_Lbl = new Label("Crust");
     private Label Size_Lbl = new Label("Size");
@@ -77,6 +76,7 @@ public class PizzaCreation_Crust {
         HBox hb11 = new HBox(20);
         HBox hb12 = new HBox(20);
         HBox hb13 = new HBox(100);
+        HBox hb14 = new HBox(100);
 
         //Padding for the VBoxes
         vb1.setPadding(new Insets(0,200,-15,0));
@@ -94,6 +94,7 @@ public class PizzaCreation_Crust {
         vb6.setAlignment(Pos.CENTER);
 
         //Padding for the HBoxes
+        hb14.setPadding(new Insets(-135,0,0,0));//cart info label
         hb13.setPadding(new Insets(-77,0, 0, 0));
         hb0.setPadding(new Insets(-135,0, 0, 0));
         hb1.setPadding(new Insets(-77,0, 0, 0));
@@ -107,6 +108,7 @@ public class PizzaCreation_Crust {
         hb10.setPadding(new Insets(0,10,0,10));
 
         //Alignment for the HBoxes
+        hb14.setAlignment(Pos.CENTER_RIGHT);
         hb0.setAlignment(Pos.CENTER_RIGHT);
         hb13.setAlignment(Pos.CENTER_LEFT);
         hb1.setAlignment(Pos.CENTER_LEFT);
@@ -124,6 +126,7 @@ public class PizzaCreation_Crust {
 
         //disables the visibility but NOT the functionality of the back button
         hb1.setOpacity(0);
+        hb0.setOpacity(0);
         hb13.setOpacity(0);
 
         //This code is to put a border around the VBoxes to make user viability easier.
@@ -134,10 +137,14 @@ public class PizzaCreation_Crust {
         vb2.setStyle(borderLayout);
         vb4.setStyle(borderLayout);
         hb10.setStyle(borderLayout);
+        hb14.setStyle(borderLayout);
 
         //Sets the all components onto the scene
         hb13.getChildren().addAll(MainMenu);
+
+        hb14.getChildren().addAll(CartInfo_Lbl);
         hb0.getChildren().addAll(Cart_btn);
+
         hb1.getChildren().addAll(Back_btn);
         hb2.getChildren().addAll(Small_Lbl, Small_radio);
         hb3.getChildren().addAll(Medium_Lbl, Medium_radio);
@@ -156,7 +163,7 @@ public class PizzaCreation_Crust {
         vb3.getChildren().addAll(Style_Lbl);
         vb4.getChildren().addAll(hb6, hb7, hb8);
         vb5.getChildren().addAll(vb1, vb2, vb3, vb4);
-        vb6.getChildren().addAll(new ImageView(Template), hb13, hb0, hb1, hb12, hb11, hb9);
+        vb6.getChildren().addAll(new ImageView(Template), hb13, hb14, hb0, hb1, hb12, hb11, hb9);
 
         //Calls other methods in this class
         FontsUsed();
@@ -217,39 +224,6 @@ public class PizzaCreation_Crust {
         Meats_btn.setOnAction(e -> window.getScene().setRoot(pizzaCreation_meats.BuildMeats(window)));
         Veggies_btn.setOnAction(e -> window.getScene().setRoot(pizzaCreation_veggies.BuildVeggies(window)));
         Next_btn.setOnAction(e -> window.getScene().setRoot(pizzaCreation_cheese.BuildCheese(window)));
-
-        //Changing Size
-        Small_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.chooseSize("small");
-        });
-        Medium_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.chooseSize("medium");
-        });
-        Large_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.chooseSize("large");
-        });
-        ExtraLarge_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.chooseSize("extraLarge");
-        });
-
-        //Crust type
-        Regular_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.chooseType("regular");
-        });
-        Pan_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.chooseType("pan");
-        });
-        DeepDish_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.chooseType("deepDish");
-        });
-
     }
     private void FontsUsed(){
         //Sets fonts for the labels.
@@ -264,6 +238,7 @@ public class PizzaCreation_Crust {
         Regular_Lbl.setFont(Font.font("Calibri", FontWeight.SEMI_BOLD,18));
         Pan_Lbl.setFont(Font.font("Calibri", FontWeight.SEMI_BOLD,18));
         DeepDish_Lbl.setFont(Font.font("Calibri", FontWeight.SEMI_BOLD,18));
+        CartInfo_Lbl.setFont(Font.font("Calibri", FontWeight.BOLD,18));
 
         //Sets Fonts for all the Buttons
         Back_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
@@ -273,14 +248,6 @@ public class PizzaCreation_Crust {
         Meats_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
         Veggies_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
         Next_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
-    }
-
-    private Pizza findpizza()
-    {
-        Pizza p = new Pizza();
-        for(Pizza obj: order.getPizzas())
-            p=obj;
-
-        return p;
+        AddToCart_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
     }
 }

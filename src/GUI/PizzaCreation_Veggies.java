@@ -10,12 +10,9 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.scene.text.Font;
-import sample.Order;
-import sample.Pizza;
 
 public class PizzaCreation_Veggies {
 
-    Order order = Main.getOrder();
     //Buttons for Pizza Creation Menus initiated.
     private Button MainMenu = new Button("Main Menu");
     private Button Cart_btn = new Button("Go To Cart");
@@ -25,6 +22,7 @@ public class PizzaCreation_Veggies {
     private Button Meats_btn = new Button("Meats");
     private Button Veggies_btn = new Button ("Veggies");
     private Button Next_btn = new Button("Next");
+    private Button AddToCart_btn = new Button ("Add To Cart");
 
     //Radio Buttons used in the Veggies menu
     //Mushrooms
@@ -68,6 +66,7 @@ public class PizzaCreation_Veggies {
     private RadioButton JalapenoWhole_radio = new RadioButton();
 
     //Labels for the Veggie menu
+    private Label CartInfo_Lbl = new Label ("Cart");
     private Label PriceInfo_Lbl = new Label("Price Information");
     private Label Veggies_Lbl = new Label("Veggies");
     private Label Mushrooms_Lbl = new Label("Mushrooms");
@@ -117,6 +116,7 @@ public class PizzaCreation_Veggies {
 
         HBox hb0 = new HBox(100);
         HBox hb14 = new HBox(100);
+        HBox hb15 = new HBox(100);
 
 
         //Padding for the VBoxes
@@ -130,6 +130,7 @@ public class PizzaCreation_Veggies {
 
         //Padding for the HBoxes
         hb13.setPadding(new Insets(-100,0,0,0));
+        hb15.setPadding(new Insets(-185,0,0,0));// cart info label
         hb0.setPadding(new Insets(-185,0,0,0));// cart button
 
         hb1.setPadding(new Insets(-120,0,0,0));//back button
@@ -146,6 +147,7 @@ public class PizzaCreation_Veggies {
         hb13.setPadding(new Insets(0,-250,0,0));
 
         //Alignment for the HBoxes
+        hb15.setAlignment(Pos.CENTER_RIGHT);
         hb0.setAlignment(Pos.CENTER_RIGHT);
         hb1.setAlignment(Pos.CENTER_LEFT);
         hb2.setAlignment(Pos.CENTER);
@@ -174,14 +176,19 @@ public class PizzaCreation_Veggies {
         hb7.setStyle(borderLayout);
         hb8.setStyle(borderLayout);
         hb9.setStyle(borderLayout);
+        hb15.setStyle(borderLayout);
 
         //disables the visibility but NOT the functionality of the back button
         hb1.setOpacity(0);
+        hb0.setOpacity(0);
         hb14.setOpacity(0);
 
         //Sets the all components onto the scene
         hb14.getChildren().addAll(MainMenu);
+
+        hb15.getChildren().addAll(CartInfo_Lbl);
         hb0.getChildren().addAll(Cart_btn);
+
         hb1.getChildren().addAll(Back_btn);
         hb2.getChildren().addAll(new ImageView(Mushrooms_pic), Mushrooms_Lbl, MushroomsLeft_radio, MushroomsRight_radio, MushroomsWhole_radio);
         hb3.getChildren().addAll(new ImageView(Tomatoes_pic), Tomatoes_Lbl, TomatoesLeft_radio, TomatoesRight_radio, TomatoesWhole_radio);
@@ -200,7 +207,7 @@ public class PizzaCreation_Veggies {
         vb1.getChildren().addAll(hb12, hb2, hb3, hb4, hb5);
         vb2.getChildren().addAll(hb13, hb6, hb7, hb8, hb9);
         vb3.getChildren().addAll(hb10, hb11);
-        vb4.getChildren().addAll(new ImageView(Template), hb14, hb0, hb1, Veggies_Lbl, vb3);
+        vb4.getChildren().addAll(new ImageView(Template), hb14, hb15, hb0, hb1, Veggies_Lbl, vb3);
 
         //Calls other methods in this class
         FontsUsed();
@@ -292,129 +299,6 @@ public class PizzaCreation_Veggies {
         Veggies_btn.setOnAction(e -> window.getScene().setRoot(pizzaCreation_veggies.BuildVeggies(window)));
         Next_btn.setOnAction(e -> window.getScene().setRoot(cart.BuildCart(window)));
         Cart_btn.setOnAction(e -> window.getScene().setRoot(cart.BuildCart(window)));
-
-        //Adding veggie toppings
-        MushroomsLeft_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("mushrooms");
-            pizza.addSpread("mushrooms",0);
-        });
-        MushroomsRight_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("mushrooms");
-            pizza.addSpread("mushrooms",1);
-        });
-        MushroomsWhole_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("mushrooms");
-            pizza.addSpread("mushrooms",2);
-        });
-        TomatoesLeft_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("tomatoes");
-            pizza.addSpread("tomatoes",0);
-        });
-        TomatoesRight_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("tomatoes");
-            pizza.addSpread("tomatoes",1);
-        });
-        TomatoesWhole_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("tomatoes");
-            pizza.addSpread("tomatoes",2);
-        });
-        PineappleLeft_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("pineapples");
-            pizza.addSpread("pineapples",0);
-        });
-        PineappleRight_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("pineapples");
-            pizza.addSpread("pineapples",1);
-        });
-        PineappleWhole_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("pineapples");
-            pizza.addSpread("pineapples",2);
-        });
-        OnionsLeft_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("onions");
-            pizza.addSpread("onions",0);
-        });
-        OnionsRight_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("onions");
-            pizza.addSpread("onions",1);
-        });
-        OnionsWhole_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("onions");
-            pizza.addSpread("onions",2);
-        });
-        GreenPeppersLeft_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("greenPeppers");
-            pizza.addSpread("greenPeppers",0);
-        });
-        GreenPeppersRight_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("greenPeppers");
-            pizza.addSpread("greenPeppers",1);
-        });
-        GreenPeppersWhole_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("greenPeppers");
-            pizza.addSpread("greenPeppers",2);
-        });
-        BlackOlivesLeft_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("blkOlives");
-            pizza.addSpread("blkOlives",0);
-        });
-        BlackOlivesRight_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("blkOlives");
-            pizza.addSpread("blkOlives",1);
-        });
-        BlackOlivesWhole_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("blkOlives");
-            pizza.addSpread("blkOlives",2);
-        });
-        FreshSpinachLeft_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("spinach");
-            pizza.addSpread("spinach",0);
-        });
-        FreshSpinachRight_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("spinach");
-            pizza.addSpread("spinach",1);
-        });
-        FreshSpinachWhole_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("spinach");
-            pizza.addSpread("spinach",2);
-        });
-        JalapenoLeft_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("jalapeno");
-            pizza.addSpread("jalapeno",0);
-        });
-        JalapenoRight_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("jalapeno");
-            pizza.addSpread("jalapeno",1);
-        });
-        JalapenoWhole_radio.setOnAction(e ->{
-            Pizza pizza = findpizza();
-            pizza.addToppings("jalapeno");
-            pizza.addSpread("jalapeno",2);
-        });
-
     }
 
     //This Method handels all the fonts used in the Veggies menu
@@ -430,6 +314,7 @@ public class PizzaCreation_Veggies {
         BlackOlives_Lbl.setFont(Font.font("Calibri", FontWeight.BOLD,18));
         FreshSpinach_Lbl.setFont(Font.font("Calibri", FontWeight.BOLD,18));
         Jalapeno_Lbl.setFont(Font.font("Calibri", FontWeight.BOLD,18));
+        CartInfo_Lbl.setFont(Font.font("Calibri", FontWeight.BOLD,18));
 
         //Sets Fonts for all the Buttons
         Cart_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
@@ -439,14 +324,6 @@ public class PizzaCreation_Veggies {
         Meats_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
         Veggies_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
         Next_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
-    }
-
-    private Pizza findpizza()
-    {
-        Pizza p = new Pizza();
-        for(Pizza obj: order.getPizzas())
-            p=obj;
-
-        return p;
+        AddToCart_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
     }
 }
