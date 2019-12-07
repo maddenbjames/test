@@ -151,7 +151,7 @@ public class PizzaCreation_Cheese {
 
         //disables the visibility but NOT the functionality of the back button
         hb1.setOpacity(0);
-        hb0.setOpacity(100);
+        hb0.setOpacity(0);
         hb13.setOpacity(0);
 
         //This code is to put a border around the VBoxes to make user viability easier.
@@ -168,7 +168,7 @@ public class PizzaCreation_Cheese {
         //Sets the all components onto the scene
         hb13.getChildren().addAll(MainMenu);
 
-        hb13.getChildren().addAll(CartInfo_Lbl);
+        hb14.getChildren().addAll(CartInfo_Lbl);
         hb0.getChildren().addAll(Cart_btn);
 
         hb1.getChildren().addAll(Back_btn);

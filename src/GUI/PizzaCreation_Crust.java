@@ -108,7 +108,7 @@ public class PizzaCreation_Crust {
         hb10.setPadding(new Insets(0,10,0,10));
 
         //Alignment for the HBoxes
-        hb14.setAlignment(Pos.CENTER_LEFT);
+        hb14.setAlignment(Pos.CENTER_RIGHT);
         hb0.setAlignment(Pos.CENTER_RIGHT);
         hb13.setAlignment(Pos.CENTER_LEFT);
         hb1.setAlignment(Pos.CENTER_LEFT);
@@ -126,7 +126,7 @@ public class PizzaCreation_Crust {
 
         //disables the visibility but NOT the functionality of the back button
         hb1.setOpacity(0);
-        hb0.setOpacity(100);
+        hb0.setOpacity(0);
         hb13.setOpacity(0);
 
         //This code is to put a border around the VBoxes to make user viability easier.
@@ -137,6 +137,7 @@ public class PizzaCreation_Crust {
         vb2.setStyle(borderLayout);
         vb4.setStyle(borderLayout);
         hb10.setStyle(borderLayout);
+        hb14.setStyle(borderLayout);
 
         //Sets the all components onto the scene
         hb13.getChildren().addAll(MainMenu);

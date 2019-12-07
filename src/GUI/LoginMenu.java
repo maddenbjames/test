@@ -12,6 +12,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.awt.event.ActionEvent;
@@ -29,6 +30,7 @@ class LoginMenu {
     private Label email_Lbl = new Label("Email:");
     private Label password_lbl = new Label("Password:");
 
+    //Password and text fields used for the main login menu
     private PasswordField password = new PasswordField();
     private TextField email = new TextField();
     private Image Template = new Image("GUI/images/PizzaProject Info Template.png");
@@ -59,7 +61,6 @@ class LoginMenu {
 
         Login_ButtonActions(window);
         FontsUsed();
-        //PopUpBox();
 
         return  vb2;
     }
@@ -67,8 +68,10 @@ class LoginMenu {
     private void Login_ButtonActions(Stage window) {
         //Scenes are initiated
         MainMenu mm  = new MainMenu();
+        CreateAccount ca = new CreateAccount();
         //sets events for buttons and passwords
         Guest_btn.setOnAction(e -> window.getScene().setRoot(mm.BuildMainMenu(window)));
+        CreateAccount_btn.setOnAction(e -> window.getScene().setRoot(ca.PopUpBox(window)));
     }
 
     //Changes the fonts of the labels and buttons
@@ -82,10 +85,6 @@ class LoginMenu {
         password.setFont(Font.font("Calibri", 24));
         LogIn_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
         Guest_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
+        CreateAccount_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
     }
-
-   // private void PopupBox(){
-
-   // }
-
 }
