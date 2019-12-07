@@ -10,9 +10,12 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.scene.text.Font;
+import sample.Order;
+import sample.Pizza;
 
 public class PizzaCreation_Veggies {
 
+    Order order = Main.getOrder();
     //Buttons for Pizza Creation Menus initiated.
     private Button MainMenu = new Button("Main Menu");
     private Button Cart_btn = new Button("Go To Cart");
@@ -299,6 +302,130 @@ public class PizzaCreation_Veggies {
         Veggies_btn.setOnAction(e -> window.getScene().setRoot(pizzaCreation_veggies.BuildVeggies(window)));
         Next_btn.setOnAction(e -> window.getScene().setRoot(cart.BuildCart(window)));
         Cart_btn.setOnAction(e -> window.getScene().setRoot(cart.BuildCart(window)));
+
+
+        //Adding veggie toppings
+        MushroomsLeft_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("mushrooms");
+            pizza.addSpread("mushrooms",0);
+        });
+        MushroomsRight_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("mushrooms");
+            pizza.addSpread("mushrooms",1);
+        });
+        MushroomsWhole_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("mushrooms");
+            pizza.addSpread("mushrooms",2);
+        });
+        TomatoesLeft_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("tomatoes");
+            pizza.addSpread("tomatoes",0);
+        });
+        TomatoesRight_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("tomatoes");
+            pizza.addSpread("tomatoes",1);
+        });
+        TomatoesWhole_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("tomatoes");
+            pizza.addSpread("tomatoes",2);
+        });
+        PineappleLeft_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("pineapples");
+            pizza.addSpread("pineapples",0);
+        });
+        PineappleRight_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("pineapples");
+            pizza.addSpread("pineapples",1);
+        });
+        PineappleWhole_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("pineapples");
+            pizza.addSpread("pineapples",2);
+        });
+        OnionsLeft_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("onions");
+            pizza.addSpread("onions",0);
+        });
+        OnionsRight_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("onions");
+            pizza.addSpread("onions",1);
+        });
+        OnionsWhole_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("onions");
+            pizza.addSpread("onions",2);
+        });
+        GreenPeppersLeft_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("greenPeppers");
+            pizza.addSpread("greenPeppers",0);
+        });
+        GreenPeppersRight_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("greenPeppers");
+            pizza.addSpread("greenPeppers",1);
+        });
+        GreenPeppersWhole_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("greenPeppers");
+            pizza.addSpread("greenPeppers",2);
+        });
+        BlackOlivesLeft_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("blkOlives");
+            pizza.addSpread("blkOlives",0);
+        });
+        BlackOlivesRight_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("blkOlives");
+            pizza.addSpread("blkOlives",1);
+        });
+        BlackOlivesWhole_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("blkOlives");
+            pizza.addSpread("blkOlives",2);
+        });
+        FreshSpinachLeft_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("spinach");
+            pizza.addSpread("spinach",0);
+        });
+        FreshSpinachRight_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("spinach");
+            pizza.addSpread("spinach",1);
+        });
+        FreshSpinachWhole_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("spinach");
+            pizza.addSpread("spinach",2);
+        });
+        JalapenoLeft_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("jalapeno");
+            pizza.addSpread("jalapeno",0);
+        });
+        JalapenoRight_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("jalapeno");
+            pizza.addSpread("jalapeno",1);
+        });
+        JalapenoWhole_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("jalapeno");
+            pizza.addSpread("jalapeno",2);
+        });
+
     }
 
     //This Method handels all the fonts used in the Veggies menu
@@ -314,7 +441,6 @@ public class PizzaCreation_Veggies {
         BlackOlives_Lbl.setFont(Font.font("Calibri", FontWeight.BOLD,18));
         FreshSpinach_Lbl.setFont(Font.font("Calibri", FontWeight.BOLD,18));
         Jalapeno_Lbl.setFont(Font.font("Calibri", FontWeight.BOLD,18));
-        CartInfo_Lbl.setFont(Font.font("Calibri", FontWeight.BOLD,18));
 
         //Sets Fonts for all the Buttons
         Cart_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
@@ -324,6 +450,14 @@ public class PizzaCreation_Veggies {
         Meats_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
         Veggies_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
         Next_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
-        AddToCart_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
+    }
+
+    private Pizza findpizza()
+    {
+        Pizza p = new Pizza();
+        for(Pizza obj: order.getPizzas())
+            p=obj;
+
+        return p;
     }
 }

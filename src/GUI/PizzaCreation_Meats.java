@@ -10,8 +10,12 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.scene.text.Font;
+import sample.Order;
+import sample.Pizza;
 
 public class PizzaCreation_Meats {
+
+    Order order = Main.getOrder();
     //Buttons for Pizza Creation Menus initiated.
     private Button MainMenu = new Button("Main Menu");
     private Button Cart_btn = new Button("Go To Cart");
@@ -223,6 +227,68 @@ public class PizzaCreation_Meats {
         Meats_btn.setOnAction(e -> window.getScene().setRoot(pizzaCreation_meats.BuildMeats(window)));
         Veggies_btn.setOnAction(e -> window.getScene().setRoot(pizzaCreation_veggies.BuildVeggies(window)));
         Next_btn.setOnAction(e -> window.getScene().setRoot(pizzaCreation_veggies.BuildVeggies(window)));
+
+        //Adding Meat toppings
+        PepperoniLeft_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("pepperoni");
+            pizza.addSpread("pepperoni",0);
+        });
+        PepperoniRight_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("pepperoni");
+            pizza.addSpread("pepperoni",1);
+        });
+        PepperoniWhole_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("pepperoni");
+            pizza.addSpread("pepperoni",2);
+        });
+        SausageLeft_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("sausage");
+            pizza.addSpread("sausage",0);
+        });
+        SausageRight_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("sausage");
+            pizza.addSpread("sausage",1);
+        });
+        SausageWhole_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("sausage");
+            pizza.addSpread("sausage",2);
+        });
+        HamLeft_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("ham");
+            pizza.addSpread("ham",0);
+        });
+        HamRight_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("ham");
+            pizza.addSpread("ham",1);
+        });
+        HamWhole_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("ham");
+            pizza.addSpread("ham",2);
+        });
+        CanadianLeft_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("canadianBacon");
+            pizza.addSpread("canadianBacon",0);
+        });
+        CanadianRight_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("canadianBacon");
+            pizza.addSpread("canadianBacon",1);
+        });
+        CanadianWhole_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.addToppings("canadianBacon");
+            pizza.addSpread("canadianBacon",2);
+        });
     }
 
     private void FontsUsed(){
@@ -234,7 +300,6 @@ public class PizzaCreation_Meats {
         Ham_Lbl.setFont(Font.font("Calibri", FontWeight.BOLD,18));
         CanadianBacon_Lbl.setFont(Font.font("Calibri", FontWeight.BOLD,18));
         PriceInfo_Lbl.setFont(Font.font("Calibri", FontWeight.BOLD,18));
-        CartInfo_Lbl.setFont(Font.font("Calibri", FontWeight.BOLD,18));
 
         //Sets Fonts for all the Buttons
         Cart_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
@@ -244,6 +309,14 @@ public class PizzaCreation_Meats {
         Meats_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
         Veggies_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
         Next_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
-        AddToCart_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
+    }
+
+    private Pizza findpizza()
+    {
+        Pizza p = new Pizza();
+        for(Pizza obj: order.getPizzas())
+            p=obj;
+
+        return p;
     }
 }

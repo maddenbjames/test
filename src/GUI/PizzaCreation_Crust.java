@@ -10,8 +10,11 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.scene.text.Font;
+import sample.Order;
+import sample.Pizza;
 
 public class PizzaCreation_Crust {
+    Order order = Main.getOrder();
 
     //Buttons for Pizza Creation Menus initiated.
     private Button MainMenu = new Button("Main Menu");
@@ -224,6 +227,40 @@ public class PizzaCreation_Crust {
         Meats_btn.setOnAction(e -> window.getScene().setRoot(pizzaCreation_meats.BuildMeats(window)));
         Veggies_btn.setOnAction(e -> window.getScene().setRoot(pizzaCreation_veggies.BuildVeggies(window)));
         Next_btn.setOnAction(e -> window.getScene().setRoot(pizzaCreation_cheese.BuildCheese(window)));
+
+
+        //Changing Size
+        Small_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.chooseSize("small");
+        });
+        Medium_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.chooseSize("medium");
+        });
+        Large_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.chooseSize("large");
+        });
+        ExtraLarge_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.chooseSize("extraLarge");
+        });
+
+        //Crust type
+        Regular_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.chooseType("regular");
+        });
+        Pan_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.chooseType("pan");
+        });
+        DeepDish_radio.setOnAction(e ->{
+            Pizza pizza = findpizza();
+            pizza.chooseType("deepDish");
+        });
+
     }
     private void FontsUsed(){
         //Sets fonts for the labels.
@@ -238,7 +275,6 @@ public class PizzaCreation_Crust {
         Regular_Lbl.setFont(Font.font("Calibri", FontWeight.SEMI_BOLD,18));
         Pan_Lbl.setFont(Font.font("Calibri", FontWeight.SEMI_BOLD,18));
         DeepDish_Lbl.setFont(Font.font("Calibri", FontWeight.SEMI_BOLD,18));
-        CartInfo_Lbl.setFont(Font.font("Calibri", FontWeight.BOLD,18));
 
         //Sets Fonts for all the Buttons
         Back_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
@@ -248,6 +284,15 @@ public class PizzaCreation_Crust {
         Meats_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
         Veggies_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
         Next_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
-        AddToCart_btn.setFont(Font.font("Calibri", FontWeight.BOLD,18));
+    }
+
+    private Pizza findpizza()
+    {
+        Pizza p = new Pizza();
+        for(Pizza obj: order.getPizzas())
+            p=obj;
+
+        return p;
     }
 }
+
